@@ -1,6 +1,23 @@
 import React, { Component, useState } from 'react';
+
+class App extends Component {
+  state = {
+    count: 0,
+  }
+  render() {
+    const { count, size } = this.state
+    return (
+      <button
+        type = 'button'
+        onClick={() => {this.setState({count: this.state.count + 1})}}>
+        count{count}
+      </button> 
+    )
+  }
+}
+
 // let id = 0
-function App() {
+function App2() {
   // let name, setName
   // let count, setCount
   // id += 1
@@ -22,19 +39,5 @@ function App() {
     </button>
   )
 }
-class App2 extends Component {
-  state = {
-    count: 0,
-  }
-  render() {
-    const { count, size } = this.state
-    return (
-      <button
-        type = 'button'
-        onClick={() => {this.setState({count: this.state.count + 1})}}>
-        count{count}
-      </button> 
-    )
-  }
-}
+
 export default App2;
