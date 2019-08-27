@@ -29,6 +29,12 @@ class Middle extends Component {
   constructor() {
     super()
   }
+  componentDidMount() {
+    console.log(1)
+  }
+  componentDidUpdate() {
+    console.log(2)
+  }
   render() {
     return <Leaf></Leaf>
   }
@@ -39,11 +45,14 @@ class App extends Component {
   }
   render() {
     return (
-      <BatteryContext.Provider value={this.state.num}>
-        <OnlineContext.Provider value = {this.state.num + 11}>
-          <Middle/>
-        </OnlineContext.Provider>
-      </BatteryContext.Provider>
+      <div>
+        <button onClick={()=>{this.setState({num: this.state.num+1})}}></button>
+        <BatteryContext.Provider value={this.state.num}>
+          <OnlineContext.Provider value = {this.state.num + 11}>
+            <Middle/>
+          </OnlineContext.Provider>
+        </BatteryContext.Provider>
+      </div>
     );
   }
 }
