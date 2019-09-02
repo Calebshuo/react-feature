@@ -33,7 +33,7 @@ function App() {
   // },[])
 
   // 声明一个useCallback的依赖，其中react能保证每次re-render后setclickCount保持不变（参见官网截图），所以不需要把setclickCount这个句柄放入数组的第二个参数里。
-  // 再次改造：即使不依赖clickCount句柄，仍能使clickCount每次都加1.如果不按下面这样写，clickCount每次都是1.
+  // 再次改造：即使不依赖clickCount句柄，仍能使clickCount每次都加1.如果不按下面这样写，clickCount每次都是1。要不然就去掉第二个参数，每次都返回新函数，也可以。
   const [clickCount, setclickCount] = useState(0)
   const onClick = useCallback(() => {
     console.log('click')
