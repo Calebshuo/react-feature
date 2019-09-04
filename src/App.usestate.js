@@ -34,7 +34,7 @@ function App2() {
   return (
     <button
       type = 'button'
-      onClick={() => {setCount(count+1)}}>
+      onClick={() => {setCount(count => count + 1)}}>
       count{count},name{name}
     </button>
   )
